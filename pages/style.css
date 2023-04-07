@@ -1,0 +1,5 @@
+#btn1 {
+    border: 2px groove rgba(rgb(0, 255, 157), rgb(215, 108, 230), rgb(32, 32, 235), alpha);
+    border-radius: 20% 20% 20% 20%;
+    background-color: aqua;
+}

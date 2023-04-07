@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Automatic Timetable Scheduler</title>
+</head>
+<body>
+  <p id="nametext"></p>
+  <form action="/send-name" method="post" onsubmit="putname(event)">
+    <input type="text" id="name" name="name" placeholder="Enter Name" required></input>
+    <button id="btn1" type="submit">Submit</button>    
+  </form>
+</body>
+<script>
+function putname(event) {
+  event.preventDefault();
+  const form = event.target;
+  const name = form.elements.name.value;
+  fetch('/send-name', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name })
+  })
+  .then((response) => response.json())
+  .then((data) => {
+      const p = document.getElementById("nametext");
+      p.textContent = data.name;
+  })
+  .catch((error) => {
+      console.error('Error:', error);
+  });
+}
+
+</script>
+
+</script>
+</html>
