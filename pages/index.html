@@ -10,6 +10,12 @@
 <body>
   <h1>Hacker Pro</h1>
   <h3>ยินดีต้อนรับ</h3>
-  <a href="http://localhost:8080/lv1.html"> asdasdasdsadasd</a>>
+  <a href="#" id="lv1-link"> asdasdasdsadasd</a>
 </body>
+<script>
+  const url = location.href;
+  const urltolv1 = url + "/lv1.html";
+  const lv1Link = document.getElementById("lv1-link");
+  lv1Link.href = urltolv1;
+</script>
 </html>
