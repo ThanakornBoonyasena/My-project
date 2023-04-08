@@ -4,37 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Hacker Pro >:D</title>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Hacker Pro >:D Level 1</title>
 </head>
 <body>
-  <p id="nametext"></p>
-  <form action="/send-name" method="post" onsubmit="putname(event)">
-    <input type="text" id="name" name="name" placeholder="Enter Name" required></input>
-    <button id="btn1" type="submit">Submit</button>    
-  </form>
+  <nav>
+    <p>Nothing to put :p</p>
+  </nav>
+
+  <section>
+    <div class="form">
+      <form action="/level1-send" method="post">
+        <input type="number" id="char1" name="char1"required></input>
+        <input type="number" id="char2" name="char2"required></input>
+        <input type="number" id="char3" name="char3"required></input>
+        <input type="number" id="char4" name="char4"required></input>
+        <input type="number" id="char5" name="char5"required></input>
+        <input type="number" id="char6" name="char6"required></input>
+        <br>
+        <button id="btn1" type="submit"><strong>Submit</strong></button>    
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>Nothing to put :p</p>
+  </footer>
 </body>
 <script>
-function putname(event) {
-  event.preventDefault();
-  const form = event.target;
-  const name = form.elements.name.value;
-  fetch('/send-name', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name })
-  })
-  .then((response) => response.json())
-  .then((data) => {
-      const p = document.getElementById("nametext");
-      p.textContent = data.name;
-  })
-  .catch((error) => {
-      console.error('Error:', error);
-  });
-}
-
-</script>
-
-</script>
+  function putname(event) {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.elements.name.value;
+    fetch('/send-name', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name })
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        const p = document.getElementById("nametext");
+        p.textContent = data.name;
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+  }
+  
+  </script>
 </html>

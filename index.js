@@ -9,10 +9,10 @@ app.use(bodyParser.json());
 app.set('view engine', 'ejs'); 
 
 
-app.post('/send-name', (req,res) => {
-    const name = req.body.name;
-    console.log(name);
-    res.json({ name }); 
+app.post('/level1-send', (req,res) => {
+    const password = req.body;
+    const passwordlist = Object.values(password);
+    console.log(passwordlist);
 })
 
 app.listen(8080 ,() => console.log("Server is running"));   
