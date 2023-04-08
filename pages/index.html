@@ -8,33 +8,8 @@
     <title>Hacker Pro >:D</title>
 </head>
 <body>
-  <p id="nametext"></p>
-  <form action="/send-name" method="post" onsubmit="putname(event)">
-    <input type="text" id="name" name="name" placeholder="Enter Name" required></input>
-    <button id="btn1" type="submit">Submit</button>    
-  </form>
+  <h1>Hacker Pro</h1>
+  <h3>ยินดีต้อนรับ</h3>
+  <a href="http://localhost:8080/lv1.html"> asdasdasdsadasd</a>>
 </body>
-<script>
-function putname(event) {
-  event.preventDefault();
-  const form = event.target;
-  const name = form.elements.name.value;
-  fetch('/send-name', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name })
-  })
-  .then((response) => response.json())
-  .then((data) => {
-      const p = document.getElementById("nametext");
-      p.textContent = data.name;
-  })
-  .catch((error) => {
-      console.error('Error:', error);
-  });
-}
-
-</script>
-
-</script>
 </html>
