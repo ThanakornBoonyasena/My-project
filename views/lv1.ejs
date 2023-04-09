@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Hacker Pro >:D Level 1</title>
+</head>
+<body>
+  <nav>
+    <p>Nothing to put :p</p>
+  </nav>
+  <article>
+      <h1 id="headertxt">Level 1</h1>
+      <p id="lv1text">Only allow numbers,Let's see how well you can create a password using only numbers. </p>
+  </article>
+  <section>
+    <div class="form">
+      <form action="/level1-send" method="post">
+        <input type="number" id="char1" name="char1" required>
+        <input type="number" id="char2" name="char2" required>
+        <input type="number" id="char3" name="char3" required>
+        <input type="number" id="char4" name="char4" required>
+        <input type="number" id="char5" name="char5" required>
+        <input type="number" id="char6" name="char6" required>
+        <button id="btn1" type="submit" >Submit</button>
+      </form>
+      
+    </div>
+    <div class="score">
+      <% if (password) { %>
+        <h1>Password: <%= password.char1 %><%= password.char2 %><%= password.char3 %><%= password.char4 %><%= password.char5 %><%= password.char6 %></h1>
+      <% } else { %>
+        <h1>No password available yet.</h1>
+      <% } %>
+    </div>
+  </section>
+
+  <footer>
+    <p>Nothing to put :p</p>
+  </footer>
+</body>
+</html>
