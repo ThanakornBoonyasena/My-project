@@ -23,8 +23,10 @@ nav  {
 }
 section  {
     grid-area: section;
+    display: flex;
     justify-self: center;
     align-items: center;
+    flex-direction: column;
 }
 footer  {
     grid-area: footer;
@@ -45,6 +47,14 @@ article {
     text-align: center;
 }
 
+.form{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    flex-direction: row;
+    width: 15.6vw;
+    height: 12.5vh;
+}
 
 .form input::-webkit-outer-spin-button,
 .form input::-webkit-inner-spin-button {
@@ -77,9 +87,17 @@ article {
     font-size: 2vmax;
 }
 
-#lv1text {
+.lv1text {
     color: #ffdf2b;
     margin: 1vmax;
     margin-top: 5vmax;
     font-size: 1.5vmax;
+}
+
+#score {
+    position: relative;
+    top: 0; 
+    color: #ff2b2b;
+    margin-top: 5vmax;
+    font-size: 1vmax;
 }

@@ -14,8 +14,8 @@ app.get('/', (req, res) => {
   });
 
   app.get('/lv1', (req, res) => {
-    const password = {};
-    res.render('lv1', { password });
+    const passwordlevel = "";
+    res.render('lv1',{passwordlevel:passwordlevel});
   });
   
   
@@ -23,7 +23,32 @@ app.get('/', (req, res) => {
 
   app.post('/level1-send', (req, res) => {
     const password = req.body;
-    res.render('lv1',{password});
+    const passwordlist = Object.values(password);
+    console.log(passwordlist);
+    const charCounts = {};
+    for (let i = 0; i < passwordlist.length; i++) {
+      const char = passwordlist[i];
+      charCounts[char] = charCounts[char] ? charCounts[char] + 1 : 1;
+    }
+    console.log(charCounts);
+    const score = Object.keys(charCounts).length;
+    console.log(score);
+    let passwordlevel = "null";
+    if (score == 1 ) {
+      passwordlevel = "Your password can be hacked instantly" ;
+    } else if (score == 2 ) {
+      passwordlevel = "Your password can be hacked instantly" ;
+    } else if (score == 3 ) {
+      passwordlevel = "Your password can be hacked instantly" ;
+    } else if (score == 4 ) {
+      passwordlevel = "Your password can be hacked instantly" ;
+    } else if (score == 5 ) {
+      passwordlevel = "Your password can be hacked instantly" ;
+    } else if (score == 6 ) {
+      passwordlevel = "Your password can be hacked instantly, but it is most secure when it only consists of numbers" ;
+    } 
+    console.log(passwordlevel);
+    res.render('lv1',{passwordlevel: passwordlevel});
   });
   
 app.listen(8080 ,() => console.log("Server is running"))
