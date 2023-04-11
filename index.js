@@ -19,6 +19,11 @@ app.get('/', (req, res) => {
   });
   
   
+  app.get('/lv1state2', (req, res) => {
+    res.render('lv1state2');
+  });
+  
+  
 
 
   app.post('/level1-send', (req, res) => {
